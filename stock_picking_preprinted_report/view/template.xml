@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <!-- action report -->
+
+    <record id="action_report_preprinted_report" model="ir.actions.report">
+        <field name="name">Dispatch Report</field>
+        <field name="model">stock.picking</field>
+        <field name="report_type">qweb-pdf</field>
+        <field name="report_name">stock_picking_preprinted_report.preprinted_report</field>
+        <field name="report_file">stock_picking_preprinted_report.preprinted_report</field>
+        <field name="print_report_name">'Dispatch Report - %s - %s' % (object.partner_id.name or '', object.name)</field>
+        <field name="binding_model_id" ref="model_stock_picking"/>
+        <field name="binding_type">report</field>
+    </record>
+
+        <template id="preprinted_report">
+        <t t-call="web.html_container">
+        <t t-foreach="docs" t-as="o">
+        <!-- Para cambiar la altura de cada campo hay que cambiar el valor de top: -->
+        <!-- Para cambiar la distancia del borde de cada campo hay que cambiar el valor de left: o right: -->
+        <!-- Fecha de impresion -->
+        <div style="position: absolute;top: 110px;right: 170px; width: 200px;">
+            <t t-esc="o.today()"/>
+        </div>
+        <!-- Nombre Partner -->
+        <div style="position: absolute;top: 215px;left: 120px; width: 200px;">
+            <span t-field="o.partner_id.name"/>
+        </div>
+        <!-- Direccion -->
+        <div style="position: absolute;top: 240px;left: 140px; width: 200px;">
+            <span t-field="o.partner_id.street"/>
+        </div>
+        <!-- Ciudad y Pais -->
+        <div style="position: absolute;top: 265px;left: 150px; width: 200px;">
+            <span t-field="o.partner_id.country_id.name"/><span t-field="o.partner_id.state_id.name"/>
+        </div>
+        <!-- Vat -->
+        <div style="position: absolute;top: 350px;right: 150px; width: 200px; ">
+            <span t-field="o.partner_id.vat"/>
+        </div>
+        <!-- Typo de responsabilidad -->
+        <div style="position: absolute;top: 365px;left: 180px; width: 200px;" t-if="o.partner_id.afip_responsability_type_id">
+            <span t-field="o.partner_id.afip_responsability_type_id.name"/>
+        </div>
+        <!-- Origen -->
+        <div style="position: absolute;top: 430px;right: 130px; width: 200px;" t-if="o.origin">
+            <span t-field="o.origin"/>
+        </div>
+        <!-- Terminos -->
+        <div style="position: absolute;top: 410px;left: 220px; width: 200px;" t-if="o.origin">
+            <t t-esc="o.get_payment_term()"/>
+        </div>
+        <!-- Productos y Cantidad -->
+        <div style="position: absolute;top: 500px;left: 100px;width: 1000px;" >
+            <table>
+                <tbody>
+                    <tr t-foreach="o.move_line_ids" t-as="move_line">
+                        <!-- Para cambiar la longitud de la descripcion del producto, cambiar width: -->
+                        <td style="width: 600px;">
+                            <span t-field="move_line.product_id.name"/>
+                            <p t-if="o.picking_type_code == 'outgoing'">
+                                <span t-field="move_line.product_id.sudo().description_pickingout"/>
+                            </p>
+                            <p t-if="o.picking_type_code == 'incoming'">
+                                <span t-field="move_line.product_id.sudo().description_pickingin"/>
+                            </p>
+                        </td>
+                        <td t-if="has_serial_number and move_line.lot_name" groups="stock.group_lot_on_delivery_slip">
+                            <span t-field="move_line.lot_name"/>
+                        </td>
+                        <td t-elif="has_serial_number" groups="stock.group_lot_on_delivery_slip">
+                            <span t-field="move_line.lot_id.name"/>
+                        </td>
+                        <td>
+                            <span t-field="move_line.qty_done"/>
+                            <span t-field="move_line.product_uom_id"/>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+       
+        </t>
+         </t>
+        </template>
+
+    <!-- paper format -->
+        <record id="papel_format_stock_picking_preprinted_report" model="report.paperformat">
+            <field name="name">Dispatch Report Paper Format</field>
+            <field name="default" eval="True" />
+            <field name="format">A4</field>
+            <field name="orientation">Portrait</field>
+            <field name="margin_top">12</field>
+            <field name="margin_bottom">8</field>
+            <field name="margin_left">5</field>
+            <field name="margin_right">5</field>
+            <field name="header_line" eval="False" />
+            <field name="header_spacing">10</field>
+            <field name="dpi">110</field>
+        </record>
+        <record id="action_report_preprinted_report" model="ir.actions.report">
+            <field name="paperformat_id" ref="papel_format_stock_picking_preprinted_report" />
+        </record>
+
+</odoo>
