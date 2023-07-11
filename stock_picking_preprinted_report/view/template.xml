@@ -18,21 +18,22 @@
         <t t-foreach="docs" t-as="o">
         <!-- Para cambiar la altura de cada campo hay que cambiar el valor de top: -->
         <!-- Para cambiar la distancia del borde de cada campo hay que cambiar el valor de left: o right: -->
+        <!-- Para cambiar el ancho del campo cambiar width: -->
         <!-- Fecha de impresion -->
         <div style="position: absolute;top: 110px;right: 170px; width: 200px;">
             <t t-esc="o.today()"/>
         </div>
         <!-- Nombre Partner -->
-        <div style="position: absolute;top: 215px;left: 120px; width: 200px;">
+        <div style="position: absolute;top: 215px;left: 120px; width: 500px;">
             <span t-field="o.partner_id.name"/>
         </div>
         <!-- Direccion -->
-        <div style="position: absolute;top: 240px;left: 140px; width: 200px;">
+        <div style="position: absolute;top: 240px;left: 140px; width: 500px;">
             <span t-field="o.partner_id.street"/>
         </div>
         <!-- Ciudad y Pais -->
-        <div style="position: absolute;top: 265px;left: 150px; width: 200px;">
-            <span t-field="o.partner_id.country_id.name"/><span t-field="o.partner_id.state_id.name"/>
+        <div style="position: absolute;top: 265px;left: 150px; width: 500px;">
+            <span t-field="o.partner_id.country_id.name"/> - <span t-field="o.partner_id.state_id.name"/>
         </div>
         <!-- Vat -->
         <div style="position: absolute;top: 350px;right: 150px; width: 200px; ">
