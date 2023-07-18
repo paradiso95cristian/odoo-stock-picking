@@ -13,7 +13,7 @@
     "application": False,
     "depends": ['stock'],
     "data": [
-        "view/template.xml",
-        "view/stock_picking_view.xml",
+        "views/template.xml",
+        "views/stock_picking_view.xml",
     ],
 }

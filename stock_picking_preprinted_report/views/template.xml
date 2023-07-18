@@ -20,47 +20,47 @@
         <!-- Para cambiar la distancia del borde de cada campo hay que cambiar el valor de left: o right: -->
         <!-- Para cambiar el ancho del campo cambiar width: -->
         <!-- Fecha de impresion -->
-        <div style="position: absolute;top: 110px;right: 170px; width: 200px;">
+        <div style="position: absolute;top: 135px;right: 170px; width: 200px;">
             <t t-esc="o.today()"/>
         </div>
         <!-- Nombre Partner -->
-        <div style="position: absolute;top: 215px;left: 120px; width: 500px;">
-            <span t-field="o.partner_id.name"/>
+        <div style="position: absolute;top: 240px;left: 145px; width: 500px;">
+            <span t-field="o.partner_id.name"/><t t-if="o.express_address_id.name"> / <span t-field="o.express_address_id.name"/></t>
         </div>
         <!-- Direccion -->
-        <div style="position: absolute;top: 240px;left: 140px; width: 500px;">
-            <span t-field="o.partner_id.street"/>
+        <div style="position: absolute;top: 265px;left: 165px; width: 500px;">
+            <span t-field="o.partner_id.street"/><t t-if="o.express_address_id"> / <span t-field="o.express_address_id.street"/></t>
         </div>
         <!-- Ciudad y Pais -->
-        <div style="position: absolute;top: 265px;left: 150px; width: 500px;">
-            <span t-field="o.partner_id.country_id.name"/> - <span t-field="o.partner_id.state_id.name"/>
+        <div style="position: absolute;top: 290px;left: 165px; width: 500px;">
+            <span t-field="o.partner_id.country_id.name"/> - <span t-field="o.partner_id.state_id.name"/><t t-if="o.express_address_id"> / <span t-field="o.express_address_id.country_id.name"/> - <span t-field="o.express_address_id.state_id.name"/></t>
         </div>
         <!-- Vat -->
-        <div style="position: absolute;top: 350px;right: 150px; width: 200px; ">
-            <span t-field="o.partner_id.vat"/>
+        <div style="position: absolute;top: 375px;right: 150px; width: 200px; ">
+            <span t-field="o.partner_id.vat"/><t t-if="o.express_address_id"> / <span t-field="o.express_address_id.vat"/></t>
         </div>
         <!-- Typo de responsabilidad -->
-        <div style="position: absolute;top: 365px;left: 180px; width: 200px;" t-if="o.partner_id.afip_responsability_type_id">
+        <div style="position: absolute;top: 315px;left: 180px; width: 200px;" t-if="o.partner_id.afip_responsability_type_id">
             <span t-field="o.partner_id.afip_responsability_type_id.name"/>
         </div>
         <!-- Valor dec -->
-        <div style="position: absolute;top: 375px;right: 230px; width: 200px;" t-if="o.x_valor_dec">
-            Valor Declarado: <span t-field="o.x_valor_dec"/>
+        <div style="position: absolute;top: 395px;right: 235px; width: 200px;" t-if="o.stated_value">
+            Valor Declarado: <span t-field="o.stated_value"/>
         </div>
         <!-- N° de OC -->
-        <div style="position: absolute;top: 400px;right: 230px; width: 200px;" t-if="o.x_orden_de_compra">
-            Nro de OC: <span t-field="o.x_orden_de_compra"/>
+        <div style="position: absolute;top: 420px;right: 235px; width: 200px;" t-if="o.purchase_order">
+            Nro de OC: <span t-field="o.purchase_order"/>
         </div>
         <!-- Origen -->
-        <div style="position: absolute;top: 430px;right: 130px; width: 200px;" t-if="o.origin">
+        <div style="position: absolute;top: 440px;right: 130px; width: 200px;" t-if="o.origin">
             <span t-field="o.origin"/>
         </div>
         <!-- Terminos -->
-        <div style="position: absolute;top: 410px;left: 220px; width: 500px;" t-if="o.origin">
+        <div style="position: absolute;top: 430px;left: 220px; width: 500px;" t-if="o.origin">
             <t t-esc="o.get_payment_term()"/>
         </div>
         <!-- Productos y Cantidad -->
-        <div style="position: absolute;top: 500px;left: 100px;width: 1000px;" >
+        <div style="position: absolute;top: 515px;left: 100px;width: 1000px;" >
             <table>
                 <tbody>
                     <tr t-foreach="o.move_line_ids" t-as="move_line">
@@ -85,7 +85,7 @@
                             <span t-field="move_line.product_uom_id"/>
                         </td>
                         <td>
-                            <span t-field="move_line.product_id.weight"/> <span t-field="move_line.product_id.weight_uom_name"/>
+                            <span t-field="move_line.product_id.weight"/><span t-field="move_line.product_id.weight_uom_name"/>
                         </td>
                     </tr>
                 </tbody>

@@ -11,6 +11,13 @@
 				    type='object'
 				/>
 			</xpath>
+			<xpath expr="//field[@name='origin']" position='after'>
+				<field name ='stated_value'/>
+				<field name ='purchase_order'/>
+			</xpath>
+			<xpath expr="//field[@name='partner_id']" position='after'>
+				<field name ='express_address_id' options="{'no_quick_create': True, 'no_create_edit' : True, 'no_edit' : True}"/>
+			</xpath>
 		</field>
 	 </record>
 	 
