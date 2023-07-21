@@ -17,3 +17,4 @@
         "views/stock_picking_view.xml",
     ],
 }
+

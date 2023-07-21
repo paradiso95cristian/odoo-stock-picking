@@ -32,3 +32,4 @@ class StockPicking(models.Model):
             return sale_order_id.payment_term_id.name
         else:
             return ""
+
