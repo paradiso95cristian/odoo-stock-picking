@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="inherit_sale_order_sale_channel" model="ir.ui.view">
+        <field name="name">sale.order.sale.channel</field>
+        <field name="model">sale.order</field>
+        <field name="inherit_id" ref="sale.view_order_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='team_id']" position="after">
+                <field name="sale_channel_id"/>
+                <field name="credit" readonly="1" force_save="1" decoration-danger="credit == 'blocked_credit'"  decoration-muted="credit == 'credit_without_limits'" decoration-success="credit == 'credit_available'"/>
+            </xpath>
+        </field>
+    </record>
+
+    <record id="inherit_sale_order_sale_channel_tree" model="ir.ui.view">
+        <field name="name">sale.order.sale.channel.tree</field>
+        <field name="model">sale.order</field>
+        <field name="inherit_id" ref="sale.view_quotation_tree_with_onboarding"/>
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='state']" position="after">
+                <field name="credit" readonly="1" force_save="1" decoration-danger="credit == 'blocked_credit'"  decoration-muted="credit == 'credit_without_limits'" decoration-success="credit == 'credit_available'"/>
+            </xpath>
+        </field>
+    </record>
+
+</odoo>

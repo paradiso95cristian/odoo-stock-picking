@@ -1,0 +1,275 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* sale_channel_credit
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 15.0+e\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2023-07-29 20:47+0000\n"
+"PO-Revision-Date: 2023-07-29 20:47+0000\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: sale_channel_credit
+#: model:ir.actions.report,print_report_name:sale_channel_credit.action_report_credit_group_report
+msgid "'credit report - %s' % (object.name)"
+msgstr "Reporte de creditos - %s' % (object.name)"
+
+#. module: sale_channel_credit
+#: model:ir.model.fields,field_description:sale_channel_credit.field_credit_groups__active
+#: model:ir.model.fields,field_description:sale_channel_credit.field_sale_channel__active
+msgid "Active"
+msgstr "Activo"
+
+#. module: sale_channel_credit
+#: model_terms:ir.ui.view,arch_db:sale_channel_credit.credit_groups_view_form
+#: model_terms:ir.ui.view,arch_db:sale_channel_credit.sale_channel_view_form
+msgid "Archived"
+msgstr "Archivado"
+
+#. module: sale_channel_credit
+#: model:ir.model.fields,field_description:sale_channel_credit.field_credit_groups__available_credit
+msgid "Available Credit"
+msgstr "Credito disponible"
+
+#. module: sale_channel_credit
+#: model:ir.model.fields.selection,name:sale_channel_credit.selection__sale_order__credit__blocked_credit
+msgid "Blocked Credit"
+msgstr "Credito blockeado"
+
+#. module: sale_channel_credit
+#: model_terms:ir.ui.view,arch_db:sale_channel_credit.sale_channel_view_form
+msgid "Channel 00001"
+msgstr "Channel 00001"
+
+#. module: sale_channel_credit
+#: model:ir.model.fields,field_description:sale_channel_credit.field_credit_groups__code
+#: model:ir.model.fields,field_description:sale_channel_credit.field_sale_channel__code
+msgid "Code"
+msgstr "Codigo"
+
+#. module: sale_channel_credit
+#: model:ir.model,name:sale_channel_credit.model_res_partner
+msgid "Contact"
+msgstr "Contacto"
+
+#. module: sale_channel_credit
+#: model:ir.model.fields,field_description:sale_channel_credit.field_res_partner__control_credit
+#: model:ir.model.fields,field_description:sale_channel_credit.field_res_users__control_credit
+msgid "Control Credit"
+msgstr "Control de creditos"
+
+#. module: sale_channel_credit
+#: model:ir.model.fields,field_description:sale_channel_credit.field_credit_groups__create_uid
+#: model:ir.model.fields,field_description:sale_channel_credit.field_sale_channel__create_uid
+msgid "Created by"
+msgstr ""
+
+#. module: sale_channel_credit
+#: model:ir.model.fields,field_description:sale_channel_credit.field_credit_groups__create_date
+#: model:ir.model.fields,field_description:sale_channel_credit.field_sale_channel__create_date
+msgid "Created on"
+msgstr ""
+
+#. module: sale_channel_credit
+#: model:ir.model.fields,field_description:sale_channel_credit.field_sale_order__credit
+msgid "Credit"
+msgstr "Credito"
+
+#. module: sale_channel_credit
+#: model:ir.model.fields.selection,name:sale_channel_credit.selection__sale_order__credit__credit_available
+msgid "Credit Available"
+msgstr "Credito disponible"
+
+#. module: sale_channel_credit
+#: model:ir.model,name:sale_channel_credit.model_credit_groups
+#: model:ir.model.fields,field_description:sale_channel_credit.field_res_partner__credit_groups_ids
+#: model:ir.model.fields,field_description:sale_channel_credit.field_res_users__credit_groups_ids
+msgid "Credit Groups"
+msgstr "Grupo de creditos"
+
+#. module: sale_channel_credit
+#: model:ir.model.fields.selection,name:sale_channel_credit.selection__sale_order__credit__credit_without_limits
+msgid "Credit Without Limits"
+msgstr "Credito sin Limite"
+
+#. module: sale_channel_credit
+#: model:ir.actions.act_window,name:sale_channel_credit.action_credit_groups
+#: model:ir.ui.menu,name:sale_channel_credit.menu_credit_groups
+#: model_terms:ir.ui.view,arch_db:sale_channel_credit.credit_groups_view_form
+#: model_terms:ir.ui.view,arch_db:sale_channel_credit.credit_groups_view_tree
+msgid "Credit groups"
+msgstr "Grupo de Creditos"
+
+#. module: sale_channel_credit
+#: model_terms:ir.ui.view,arch_db:sale_channel_credit.credit_group_report
+msgid "DATE"
+msgstr "FECHA"
+
+#. module: sale_channel_credit
+#: model:ir.model.fields,field_description:sale_channel_credit.field_sale_channel__deposit_id
+msgid "Deposit"
+msgstr "Deposito"
+
+#. module: sale_channel_credit
+#: model:ir.model.fields,field_description:sale_channel_credit.field_credit_groups__display_name
+#: model:ir.model.fields,field_description:sale_channel_credit.field_sale_channel__display_name
+msgid "Display Name"
+msgstr "Nombre a mostrar"
+
+#. module: sale_channel_credit
+#: model_terms:ir.ui.view,arch_db:sale_channel_credit.credit_group_report
+msgid "EMAIL"
+msgstr "EMAIL"
+
+#. module: sale_channel_credit
+#: model:ir.model.fields,field_description:sale_channel_credit.field_credit_groups__global_credit
+msgid "Global Credit"
+msgstr "Credito Global"
+
+#. module: sale_channel_credit
+#: model_terms:ir.ui.view,arch_db:sale_channel_credit.credit_groups_view_form
+msgid "Group 00001"
+msgstr ""
+
+#. module: sale_channel_credit
+#: model:ir.model.fields,field_description:sale_channel_credit.field_credit_groups__id
+#: model:ir.model.fields,field_description:sale_channel_credit.field_sale_channel__id
+msgid "ID"
+msgstr ""
+
+#. module: sale_channel_credit
+#: model:ir.model.fields,field_description:sale_channel_credit.field_sale_channel__journal_id
+msgid "Journal"
+msgstr "Diario"
+
+#. module: sale_channel_credit
+#: model:ir.model,name:sale_channel_credit.model_account_move
+msgid "Journal Entry"
+msgstr "Asiento contable"
+
+#. module: sale_channel_credit
+#: model:ir.model.fields,field_description:sale_channel_credit.field_credit_groups____last_update
+#: model:ir.model.fields,field_description:sale_channel_credit.field_sale_channel____last_update
+msgid "Last Modified on"
+msgstr ""
+
+#. module: sale_channel_credit
+#: model:ir.model.fields,field_description:sale_channel_credit.field_credit_groups__write_uid
+#: model:ir.model.fields,field_description:sale_channel_credit.field_sale_channel__write_uid
+msgid "Last Updated by"
+msgstr ""
+
+#. module: sale_channel_credit
+#: model:ir.model.fields,field_description:sale_channel_credit.field_credit_groups__write_date
+#: model:ir.model.fields,field_description:sale_channel_credit.field_sale_channel__write_date
+msgid "Last Updated on"
+msgstr ""
+
+#. module: sale_channel_credit
+#: model_terms:ir.ui.view,arch_db:sale_channel_credit.credit_group_report
+msgid "NAME"
+msgstr "NOMBRE"
+
+#. module: sale_channel_credit
+#: model:ir.model.fields,field_description:sale_channel_credit.field_credit_groups__name
+#: model:ir.model.fields,field_description:sale_channel_credit.field_sale_channel__name
+msgid "Name"
+msgstr "Nombre"
+
+#. module: sale_channel_credit
+#: model_terms:ir.actions.act_window,help:sale_channel_credit.action_sale_channel
+msgid "No Channels"
+msgstr "Sin canales"
+
+#. module: sale_channel_credit
+#: model_terms:ir.actions.act_window,help:sale_channel_credit.action_credit_groups
+msgid "No Groups"
+msgstr "sin grupos"
+
+#. module: sale_channel_credit
+#: model_terms:ir.ui.view,arch_db:sale_channel_credit.credit_group_report
+msgid "PHONE"
+msgstr "TELEFONO"
+
+#. module: sale_channel_credit
+#: model_terms:ir.ui.view,arch_db:sale_channel_credit.credit_groups_view_form
+msgid "Print Report"
+msgstr "Imprimir reporte"
+
+#. module: sale_channel_credit
+#: model:ir.model,name:sale_channel_credit.model_sale_channel
+#: model:ir.model.fields,field_description:sale_channel_credit.field_account_bank_statement_line__sale_channel_id
+#: model:ir.model.fields,field_description:sale_channel_credit.field_account_move__sale_channel_id
+#: model:ir.model.fields,field_description:sale_channel_credit.field_account_payment__sale_channel_id
+#: model:ir.model.fields,field_description:sale_channel_credit.field_credit_groups__sale_channel_id
+#: model:ir.model.fields,field_description:sale_channel_credit.field_sale_order__sale_channel_id
+#: model:ir.model.fields,field_description:sale_channel_credit.field_stock_picking__sale_channel_id
+#: model_terms:ir.ui.view,arch_db:sale_channel_credit.sale_channel_view_form
+msgid "Sale Channel"
+msgstr "Canal de Ventas"
+
+#. module: sale_channel_credit
+#: model:ir.actions.act_window,name:sale_channel_credit.action_sale_channel
+#: model:ir.ui.menu,name:sale_channel_credit.menu_sale_channel
+#: model_terms:ir.ui.view,arch_db:sale_channel_credit.sale_channel_view_form
+#: model_terms:ir.ui.view,arch_db:sale_channel_credit.sale_channel_view_tree
+msgid "Sale Channels"
+msgstr "Canal de Ventas"
+
+#. module: sale_channel_credit
+#: model:ir.model,name:sale_channel_credit.model_sale_order
+msgid "Sales Order"
+msgstr "Pedido de venta"
+
+#. module: sale_channel_credit
+#: model_terms:ir.ui.view,arch_db:sale_channel_credit.credit_group_report
+msgid "TOTAL"
+msgstr "TOTAL"
+
+#. module: sale_channel_credit
+#: model:ir.model.fields,field_description:sale_channel_credit.field_account_bank_statement_line__amount_total_currency
+#: model:ir.model.fields,field_description:sale_channel_credit.field_account_move__amount_total_currency
+#: model:ir.model.fields,field_description:sale_channel_credit.field_account_payment__amount_total_currency
+#: model:ir.model.fields,field_description:sale_channel_credit.field_sale_order__amount_total_currency
+msgid "Total currency"
+msgstr "Total"
+
+#. module: sale_channel_credit
+#: model:ir.model,name:sale_channel_credit.model_stock_picking
+msgid "Transfer"
+msgstr "Albarán"
+
+#. module: sale_channel_credit
+#: model:ir.model.fields,field_description:sale_channel_credit.field_credit_groups__used_credit
+msgid "Used Credit"
+msgstr "Credito usado"
+
+#. module: sale_channel_credit
+#: model_terms:ir.ui.view,arch_db:sale_channel_credit.credit_group_report
+msgid "VAT"
+msgstr "VAT"
+
+#. module: sale_channel_credit
+#: code:addons/sale_channel_credit/models/sale_order.py:0
+#, python-format
+msgid ""
+"You cant confirm the sale if the value of the Credit field is Credit locked"
+msgstr ""
+"No puede confirmar una venta si tiene el credito blockeado"
+
+#. module: sale_channel_credit
+#: model:ir.model.constraint,message:sale_channel_credit.constraint_credit_groups_uniq_code
+#: model:ir.model.constraint,message:sale_channel_credit.constraint_sale_channel_uniq_code
+msgid "code must be unique"
+msgstr "El codigo debe de ser unico"
+
+#. module: sale_channel_credit
+#: model:ir.actions.report,name:sale_channel_credit.action_report_credit_group_report
+msgid "credit report"
+msgstr "Reporte de Creditos"

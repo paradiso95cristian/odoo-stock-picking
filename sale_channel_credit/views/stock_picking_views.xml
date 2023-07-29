@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="inherit_stock_picking_sale_channel" model="ir.ui.view">
+        <field name="name">stock.picking.sale.channel</field>
+        <field name="model">stock.picking</field>
+        <field name="inherit_id" ref="stock.view_picking_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='move_type']" position="after">
+                <field name="sale_channel_id"/>
+            </xpath>
+        </field>
+    </record>
+</odoo>

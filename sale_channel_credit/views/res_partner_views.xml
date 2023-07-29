@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="inherit_partner_credit_groups" model="ir.ui.view">
+        <field name="name">res.partner.credit.groups</field>
+        <field name="model">res.partner</field>
+        <field name="inherit_id" ref="base.view_partner_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='team_id']" position="after">
+                <field name="control_credit" />
+                <field name="credit_groups_ids" widget="many2many_tags" attrs="{'invisible':[('control_credit', '=', False)],'required':[('control_credit', '=', True)]}" />
+            </xpath>
+        </field>
+    </record>
+</odoo>

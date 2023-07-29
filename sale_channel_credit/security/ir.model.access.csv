@@ -1,0 +1,3 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_sale_channel,access.sale.channel,model_sale_channel,base.group_user,1,1,1,1
+access_credit_groups,access.credit.groups,model_credit_groups,base.group_user,1,1,1,1

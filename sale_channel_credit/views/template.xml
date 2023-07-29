@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+    <!-- action report -->
+
+    <record id="action_report_credit_group_report" model="ir.actions.report">
+        <field name="name">credit report</field>
+        <field name="model">credit.groups</field>
+        <field name="report_type">qweb-pdf</field>
+        <field name="report_name">sale_channel_credit.credit_group_report</field>
+        <field name="report_file">sale_channel_credit.credit_group_report</field>
+        <field name="print_report_name">'credit report - %s' % (object.name)</field>
+        <field name="binding_model_id" ref="model_credit_groups"/>
+        <field name="binding_type">report</field>
+    </record>
+
+        <template id="credit_group_report">
+            <t t-call="web.html_container">
+                <div class="article" t-att-data-oe-model="o and o._name" t-att-data-oe-id="o and o.id" t-att-data-oe-lang="o and o.env.context.get('lang')">
+                    <t t-foreach="docs" t-as="o">
+                        <h1 t-field="o.name"/>
+                        <p>Code: <span t-field="o.code"/></p>
+                        <p>Channel: <span t-field="o.sale_channel_id.name"/></p>
+                        <h2>Customer</h2>
+                        <table style="width: 1000px; border: 1px solid">
+                            <thead>
+                                <tr>
+                                    <td>NAME</td>
+                                    <td>VAT</td>
+                                    <td>EMAIL</td>
+                                    <td>PHONE</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr t-foreach="o.get_clients()" t-as="client_id">
+                                    <td>
+                                        <span t-field="client_id.name"/>
+                                    </td>
+                                    <td>
+                                        <span t-field="client_id.vat"/>
+                                    </td>
+                                    <td>
+                                        <span t-field="client_id.email"/>
+                                    </td>
+                                    <td>
+                                        <span t-field="client_id.phone"/>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        <h2>Sale Orders</h2>
+                        <table style="width: 1000px; border: 1px solid" >
+                            <thead>
+                                <tr>
+                                    <td>NAME</td>
+                                    <td>DATE</td>
+                                    <td>TOTAL</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr t-foreach="o.get_sale()" t-as="sale_id">
+                                    <td>
+                                        <span t-field="sale_id.name"/>
+                                    </td>
+                                    <td>
+                                        <span t-field="sale_id.date_order"/>
+                                    </td>
+                                    <td>
+                                        <span t-field="sale_id.amount_total_currency"/>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        <h2>Invoice</h2>
+                        <table style="width: 1000px; border: 1px solid" >
+                            <thead>
+                                <tr>
+                                    <td>NAME</td>
+                                    <td>DATE</td>
+                                    <td>TOTAL</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr t-foreach="o.get_invoice()" t-as="invoice_id">
+                                    <td>
+                                        <span t-field="invoice_id.name"/>
+                                    </td>
+                                    <td>
+                                        <span t-field="invoice_id.invoice_date"/>
+                                    </td>
+                                    <td>
+                                        <span t-field="invoice_id.amount_total_currency"/>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </t>
+                </div>
+            </t>
+        </template>
+
+</odoo>
+
+
