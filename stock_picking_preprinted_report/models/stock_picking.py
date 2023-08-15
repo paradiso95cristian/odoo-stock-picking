@@ -19,6 +19,13 @@ class StockPicking(models.Model):
                     stated_value = sale_order.amount_total
             record.stated_value = stated_value
 
+    def get_weight(self):
+        for picking in self:
+            total = 0
+            if picking.move_line_ids_without_package:
+                for line in picking.move_line_ids_without_package:
+                    total += line.total_weight
+            return total
     def create_template_report(self):
         return self.env.ref('stock_picking_preprinted_report.action_report_preprinted_report').report_action(self)
 
