@@ -21,71 +21,71 @@
                     <!-- Para cambiar la distancia del borde de cada campo hay que cambiar el valor de left: o right: -->
                     <!-- Para cambiar el ancho del campo cambiar width: -->
                     <!-- Fecha de impresion -->
-                    <div style="position: absolute;top: 135px;right: 170px; width: 200px;">
+                    <div style="position: absolute;top: 90px;right: 90px; width: 200px; font-size:19px;">
                         <t t-esc="o.today()"/>
                     </div>
                     <!-- Nombre Partner -->
-                    <div style="position: absolute;top: 240px;left: 145px; width: 800px;">
+                    <div style="position: absolute;top: 240px;left: 145px; width: 800px; font-size:19px;">
                         <span t-raw="o.partner_id.name"/>
                     </div>
                     <!-- Direccion -->
-                    <div style="position: absolute;top: 265px;left: 165px; width: 800px;">
+                    <div style="position: absolute;top: 265px;left: 165px; width: 800px; font-size:19px;">
                         <span t-field="o.partner_id.street"/>
                     </div>
                     <!-- Ciudad y Pais -->
-                    <div style="position: absolute;top: 290px;left: 165px; width: 800px;">
+                    <div style="position: absolute;top: 295px;left: 165px; width: 800px; font-size:19px;">
                         <span t-field="o.partner_id.country_id.name"/> - <span t-field="o.partner_id.state_id.name"/>
                     </div>
                     <!-- Vat -->
-                    <div style="position: absolute;top: 375px;right: 50px; width: 300px; ">
+                    <div style="position: absolute;top: 380px;right: 30px; width: 300px; font-size:19px;">
                         <span t-field="o.partner_id.vat"/>
                     </div>
+                    <!-- Origen -->
+                    <div style="position: absolute;top: 450px;right: 10px; width: 300px; font-size:19px;" t-if="o.origin">
+                        <span t-field="o.origin"/>
+                    </div>
                     <!-- Typo de responsabilidad -->
-                    <div style="position: absolute;top: 315px;left: 180px; width: 300px;" t-if="o.partner_id.l10n_ar_afip_responsibility_type_id">
+                    <div style="position: absolute;top: 405px;left: 180px; width: 300px; font-size:19px;" t-if="o.partner_id.l10n_ar_afip_responsibility_type_id">
                         <span t-field="o.partner_id.l10n_ar_afip_responsibility_type_id.name"/>
                     </div>
                     <!-- Valor dec -->
-                    <div style="position: absolute;top: 975px;left: 165px; width: 300px;">
+                    <div style="position: absolute;top: 975px;left: 165px; width: 300px; font-size:19px;">
                         Valor Dec.: <span t-field="o.stated_value"/>
                     </div>
                     <!-- Kilos -->
-                    <div style="position: absolute;top: 1000px;left: 165px; width: 300px;">
+                    <div style="position: absolute;top: 1000px;left: 165px; width: 300px; font-size:19px;">
                         Kilos: <span t-esc="o.get_weight()"/>
                     </div>
                     <!-- Expreso -->
-                    <div style="position: absolute;top: 1025px;left: 165px; width: 300px;" t-if="o.express_address_id">
+                    <div style="position: absolute;top: 1025px;left: 165px; width: 300px; font-size:19px;" t-if="o.express_address_id">
                         Expreso: <span t-raw="o.express_address_id.name"/>
                     </div>
-                    <div style="position: absolute;top: 1050px;left: 235px; width: 300px;" t-if="o.express_address_id">
+                    <div style="position: absolute;top: 1050px;left: 235px; width: 300px; font-size:19px;" t-if="o.express_address_id">
                         <span t-field="o.express_address_id.street"/>
                     </div>
                     <!-- Observaciones -->
-                    <div style="position: absolute;top: 1100px;left: 165px; width: 300px;">
+                    <div style="position: absolute;top: 1100px;left: 165px; width: 300px; font-size:19px;">
                         Observaciones: <span t-esc="o.note"/>
                     </div>
-                    <!-- Origen -->
-                    <div style="position: absolute;top: 440px;right: 30px; width: 300px;" t-if="o.origin">
-                        <span t-field="o.origin"/>
-                    </div>
                     <!-- Terminos -->
-                    <div style="position: absolute;top: 430px;left: 220px; width: 500px;" t-if="o.origin">
+                    <div style="position: absolute;top: 430px;left: 220px; width: 500px; font-size:19px;" t-if="o.origin">
                         <t t-esc="o.get_payment_term()"/>
                     </div>
                     <!-- Productos y Cantidad -->
-                    <div style="position: absolute;top: 515px;left: 130px;width: 1000px;" >
+                    <div style="position: absolute;top: 575px;left: 40px;width: 1000px;" >
                         <table>
                             <tbody>
                                 <tr t-foreach="o.move_line_ids" t-as="move_line">
                                     <!-- Para cambiar la longitud de la descripcion del producto, cambiar width: -->
                                     <td style="width: 100px;">
-                                        <span t-field="move_line.product_id.default_code"/>
+                                        <span t-field="move_line.product_id.default_code" style="font-size:19px"/>
                                     </td>
-                                    <td t-if="move_line.product_id and move_line.product_id.name" style="width: 500px;">
-                                        <span t-field="move_line.product_id.name"/>
+                                    <td t-if="move_line.product_id and move_line.product_id.name" style="width: 560px;">
+                                        <span t-field="move_line.product_id.name" style="font-size:19px"/>
                                     </td>
                                     <td style="width: 200px;">
-                                        <span t-field="move_line.qty_done"/>
-                                        <span t-field="move_line.product_uom_id"/>
+                                        <span t-field="move_line.qty_done" style="font-size:19px"/>
+                                        <span t-field="move_line.product_uom_id" style="font-size:19px"/>
                                     </td>
                                     <!-- <td>
                                         <span t-field="move_line.total_weight"/><span t-field="move_line.product_id.weight_uom_name"/>
