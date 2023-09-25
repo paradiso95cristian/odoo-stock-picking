@@ -11,7 +11,7 @@ class AccountMove(models.Model):
             message loaded by default
         """
         self.ensure_one()
-        template = self.env.ref(self._get_mail_template(), raise_if_not_found=False)
+        template = self.env.ref('stock_picking_preprinted_report.email_template_invoice_double', raise_if_not_found=False)
         lang = False
         if template:
             lang = template._render_lang(self.ids)[self.id]
@@ -21,9 +21,6 @@ class AccountMove(models.Model):
         ctx = dict(
             default_model='account.move',
             default_res_id=self.id,
-            # For the sake of consistency we need a default_res_model if
-            # default_res_id is set. Not renaming default_model as it can
-            # create many side-effects.
             default_res_model='account.move',
             default_use_template=bool(template),
             default_template_id=template and template.id or False,
