@@ -1,6 +1,7 @@
 # -*- coding: utf-8 -*-
 
-from odoo import models
+from odoo import models,_
+from odoo.tools import get_lang
 
 class AccountMove(models.Model):
     _inherit = "account.move"
