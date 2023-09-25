@@ -165,7 +165,7 @@
                 </div>
         </template>
 
-        <template id="second_account_invoices">
+        <template id="report_invoice_custom">
             <t t-call="custom_layout">
                 <t t-set="o" t-value="o.with_context(lang=lang)" />
                 <t t-set="address">
