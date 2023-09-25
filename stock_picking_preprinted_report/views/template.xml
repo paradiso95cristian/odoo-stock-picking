@@ -405,48 +405,44 @@
         <field name="body_html" type="html">
             <div style="margin: 0px; padding: 0px;">
                 <p style="margin: 0px; padding: 0px; font-size: 13px;">
-            Dear
-                    <t t-if="object.partner_id.parent_id">
-                        <t t-out="object.partner_id.name or ''">Brandon Freeman</t> (                        <t t-out="object.partner_id.parent_id.name or ''">Azure Interior</t>),
+                    Estimado
+                    <t t-if="object.partner_id.parent_id" data-oe-t-group="0" data-oe-t-selectable="true" data-oe-t-group-active="true" data-oe-t-inline="true">
+                        <t t-out="object.partner_id.name or ''" contenteditable="false" data-oe-t-inline="true">Brandon Freeman</t> (<t t-out="object.partner_id.parent_id.name or ''" contenteditable="false" data-oe-t-inline="true">Azure Interior</t>),
                     </t>
-                    <t t-else="">
-                        <t t-out="object.partner_id.name or ''">Brandon Freeman</t>,
+                    <t t-else="" data-oe-t-selectable="true" data-oe-t-group="0" data-oe-t-inline="true">
+                        <t t-out="object.partner_id.name or ''" contenteditable="false" data-oe-t-inline="true">Brandon Freeman</t>,
                     </t>
-                    <br />
-                    <br />
-            Here is your
-                    <t t-if="object.name">
-                invoice <strong t-out="object.name or ''">INV/2021/05/0005</strong>
+                    <br><br>
+                    Aquí está su
+                    <t t-if="object.name" data-oe-t-group="1" data-oe-t-selectable="true" data-oe-t-group-active="true" data-oe-t-inline="true">
+                        factura <strong t-out="object.name or ''" contenteditable="false">INV/2021/05/0005</strong>
                     </t>
-                    <t t-else="">
-                invoice
+                    <t t-else="" data-oe-t-selectable="true" data-oe-t-group="1" data-oe-t-inline="true">
+                        factura
                     </t>
-                    <t t-if="object.invoice_origin">
-                (with reference: <t t-out="object.invoice_origin or ''">SUB003</t>)
+                    <t t-if="object.invoice_origin" data-oe-t-group="2" data-oe-t-group-active="true" data-oe-t-inline="true">
+                        (con referencia: <t t-out="object.invoice_origin or ''" contenteditable="false" data-oe-t-inline="true">SUB003</t>)
                     </t>
-            amounting in <strong t-out="format_amount(object.amount_total, object.currency_id) or ''">$ 143,750.00</strong>
-            from <t t-out="object.company_id.name or ''">YourCompany</t>.
-                    <t t-if="object.payment_state in ('paid', 'in_payment')">
-                This invoice is already paid.
+                    por el importe de <strong t-out="format_amount(object.amount_total, object.currency_id) or ''" contenteditable="false">$ 143,750.00</strong>
+                    de <t t-out="object.company_id.name or ''" contenteditable="false" data-oe-t-inline="true">YourCompany</t>.
+                    <t t-if="object.payment_state in ('paid', 'in_payment')" data-oe-t-group="3" data-oe-t-selectable="true" data-oe-t-group-active="true" data-oe-t-inline="true">
+                        Esta factura ya está pagada.
                     </t>
-                    <t t-else="">
-                Please remit payment at your earliest convenience.
-                        <t t-if="object.payment_reference">
-                            <br />
-                            <br />
-                    Please use the following communication for your payment: <strong t-out="object.payment_reference or ''">INV/2021/05/0005</strong>.
+                    <t t-else="" data-oe-t-selectable="true" data-oe-t-group="3" data-oe-t-inline="true">
+                        Por favor remita el pago a su más pronta conveniencia.
+                        <t t-if="object.payment_reference" data-oe-t-group="4" data-oe-t-group-active="true" data-oe-t-inline="true">
+                            <br><br>
+                            Utilice la siguiente referencia para su pago: <strong t-out="object.payment_reference or ''" contenteditable="false">INV/2021/05/0005</strong>.
                         </t>
                     </t>
-                    <br />
-                    <br />
-            Do not hesitate to contact us if you have any questions.
-                    <t t-if="object.invoice_user_id.signature">
-                        <br />
-                        <t t-out="object.invoice_user_id.signature or ''">--                            <br/>
-    Mitchell Admin</t>
+                    <br><br>
+                     No dude en contactarnos si tiene alguna pregunta.
+                    <t t-if="object.invoice_user_id.signature" data-oe-t-group="5" data-oe-t-group-active="true" data-oe-t-inline="true">
+                        <br>
+                        <t t-out="object.invoice_user_id.signature or ''" contenteditable="false" data-oe-t-inline="true">--<br>Mitchell Admin</t>
                     </t>
                 </p>
-            </div>
+            </div>            
         </field>
         <field name="report_template" ref="second_account_invoices"/>
         <field name="report_name">Invoice_{{ (object.name or '').replace('/','_') }}{{ object.state == 'draft' and '_draft' or '' }}</field>
