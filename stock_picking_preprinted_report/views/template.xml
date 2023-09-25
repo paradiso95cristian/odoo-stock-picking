@@ -438,8 +438,8 @@
                     <br></br>
                      No dude en contactarnos si tiene alguna pregunta.
                     <t t-if="object.invoice_user_id.signature" data-oe-t-group="5" data-oe-t-group-active="true" data-oe-t-inline="true">
-                        <br>
-                        <t t-out="object.invoice_user_id.signature or ''" contenteditable="false" data-oe-t-inline="true">--<br>Mitchell Admin</t>
+                        <br></br>
+                        <t t-out="object.invoice_user_id.signature or ''" contenteditable="false" data-oe-t-inline="true">--<br></br>Mitchell Admin</t>
                     </t>
                 </p>
             </div>            
