@@ -412,7 +412,7 @@
                     <t t-else="" data-oe-t-selectable="true" data-oe-t-group="0" data-oe-t-inline="true">
                         <t t-out="object.partner_id.name or ''" contenteditable="false" data-oe-t-inline="true">Brandon Freeman</t>,
                     </t>
-                    <br><br>
+                    <br></br>
                     Aquí está su
                     <t t-if="object.name" data-oe-t-group="1" data-oe-t-selectable="true" data-oe-t-group-active="true" data-oe-t-inline="true">
                         factura <strong t-out="object.name or ''" contenteditable="false">INV/2021/05/0005</strong>
@@ -431,11 +431,11 @@
                     <t t-else="" data-oe-t-selectable="true" data-oe-t-group="3" data-oe-t-inline="true">
                         Por favor remita el pago a su más pronta conveniencia.
                         <t t-if="object.payment_reference" data-oe-t-group="4" data-oe-t-group-active="true" data-oe-t-inline="true">
-                            <br><br>
+                            <br></br>
                             Utilice la siguiente referencia para su pago: <strong t-out="object.payment_reference or ''" contenteditable="false">INV/2021/05/0005</strong>.
                         </t>
                     </t>
-                    <br><br>
+                    <br></br>
                      No dude en contactarnos si tiene alguna pregunta.
                     <t t-if="object.invoice_user_id.signature" data-oe-t-group="5" data-oe-t-group-active="true" data-oe-t-inline="true">
                         <br>
