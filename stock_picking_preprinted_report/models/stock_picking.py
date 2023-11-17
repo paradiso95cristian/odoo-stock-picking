@@ -16,8 +16,12 @@ class StockPicking(models.Model):
             if record.origin:
                 sale_order = self.env['sale.order'].search([('name','=',record.origin)])
                 if sale_order:
-                    stated_value = sale_order.amount_total
+                    total = 0
+                    for line in sale_order.order_line:
+                        total += line.product_uom_qty * line.price_unit
+                    stated_value = total
             record.stated_value = stated_value
+
 
     def get_weight(self):
         for picking in self:
