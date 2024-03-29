@@ -37,6 +37,10 @@
                         <span t-field="o.partner_id.country_id.name"/>
  -                        <span t-field="o.partner_id.state_id.name"/>
                     </div>
+                      <!-- Localidad -->
+                    <div style="position: absolute;top: 325px;left: 165px; width: 800px; font-size:19px;">
+                        <span t-if="o.partner_id.city">Localidad: <span t-field="o.partner_id.city"/></span>
+                    </div>
                     <!-- Vat -->
                     <div style="position: absolute;top: 380px;right: 30px; width: 300px; font-size:19px;">
                         <span t-field="o.partner_id.vat"/>
@@ -66,7 +70,7 @@
                     </div>
                     <!-- Observaciones -->
                     <div style="position: absolute;top: 1100px;left: 165px; width: 300px; font-size:19px;">
-                        Observaciones: <span t-esc="o.note"/>
+                        Observaciones: <span t-if="o.note" t-esc="o.note"/> <span t-if="o.partner_id.parent_id" t-esc="o.partner_id.parent_id.comment"/>
                     </div>
                     <!-- Terminos -->
                     <div style="position: absolute;top: 430px;left: 220px; width: 500px; font-size:19px;" t-if="o.origin">
